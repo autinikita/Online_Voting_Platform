@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="Registration.css">
+</head>
+<body>
+
+    <h2>Register</h2>
+    <div style="margin: 0 auto; width: 50%; text-align: center;">
+
+         <form method="post" action="Register">
+            <label for="Name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="Name" id="Name" required><br><br>
+
+            <label for="DOB"><b>DOB</b></label>
+            <input type="date" placeholder="Enter DOB" name="DOB" id="DOB" required><br><br>
+
+            <label for="Address"><b>Address</b></label>
+            <input type="text" placeholder="Enter Address" name="Address" id="Address" required><br><br>
+
+            <label for="Phone"><b>Phone Number</b></label>
+            <input type="tel" placeholder="Enter Phone Number" name="Phone" id="Phone" required maxlength="10" minlength="10"><br><br>
+
+            <label for="Aadhar"><b>Aadhar Number</b></label>
+            <input type="tel" placeholder="Enter Aadhar Number" name="Aadhar" id="Aadhar" required pattern="\d{12}" maxlength="12" minlength="12"><br><br>
+
+            <label for="voterid"><b>Voter ID</b></label>
+            <input type="text" placeholder="Enter Voter ID" name="voterid" id="voterid" required maxlength="10" minlength="10"><br><br>
+
+            <label for="Gmail"><b>Gmail</b></label>
+            <input type="email" placeholder="Enter Gmail" name="Gmail" id="Gmail" required><br><br>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter password" name="password" id="password" required><br><br>
+            
+            <!--  <label for="password"><b>status</b></label>
+            <input type="text" placeholder="Enter " name="status" id="status" required><br><br>-->
+
+            <button type="submit">Register</button>
+            <br><br>
+            Already have an account?
+            <br>
+            <a href="Login.html">Login</a>
+         </form>
+    </div>
+    
+</body>
+</html>

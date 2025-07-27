@@ -1,0 +1,290 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+/* Header Styles */
+header {
+    background-color: #7b1fa2; /* Slightly darker purple shade */
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links a:hover {
+    color: #f4f4f9;
+    transform: scale(1.1); /* Make the link scale on hover */
+    background-color: #7b1fa2; /* Slightly darker purple hover effect */
+}
+
+
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 75px;
+    width: 75px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #f4f4f9;
+    transform: scale(1.1); /* Make the link scale on hover */
+}
+
+/* Hero Section Styling */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, #8e24aa, #6a1b9a); /* Gradient with purple shades */
+    padding: 60px 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    color: white;
+    transition: background 0.5s ease;
+}
+
+.hero:hover {
+    background: linear-gradient(45deg, #6a1b9a, #8e24aa); /* Reverse the gradient on hover */
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    background-color: #f4f4f9;
+    color: #6a1b9a;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #6a1b9a;
+    color: white;
+    transform: translateY(-2px); /* Slightly raise the button on hover */
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Login Form Section */
+.login-form {
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form:hover {
+    transform: translateY(-5px); /* Slightly lift the form */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.login-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #6a1b9a; /* Purple heading */
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #6a1b9a; /* Change border to purple on focus */
+    outline: none;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #6a1b9a;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-form button:hover {
+    background-color: #8e24aa;
+    transform: translateY(-2px); /* Button lift effect */
+}
+/* Footer Styles */
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+ .hero-image img {
+    max-width: 110%; /* Increase the width to make it bigger */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.hero-image img {
+    width: 500px; /* Set a fixed width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+.hero-image img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .login-form {
+        width: 90%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+
+    .login-form button {
+        font-size: 1rem;
+    }
+} 
+
+.footer {
+    background-color: #7b1fa2; /* purple background */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 50px; /
+    width:30%; /* Full width */
+    position: relative; /* Keeps footer at the bottom without fixing */
+    bottom: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    max-width: 300px;
+    padding: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.footer-section p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.footer-section a {
+    color: #A0C4FF; /* Light blue link */
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    /* You can move this into add.css if preferred */
+    .button-container {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .custom-button {
+        background-color: #007BFF;
+        color: white;
+        padding: 15px 30px;
+        margin: 10px;
+        text-decoration: none;
+        font-size: 18px;
+        border-radius: 8px;
+        border: 2px solid transparent;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .custom-button:hover {
+        background-color: #0056b3;
+    }
+
+    #deleteSection {
+        display: none;
+        margin-top: 40px;
+    }
+
+    table {
+        width: 80%;
+        margin: auto;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 2px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: lightgray;
+    }
+
+    .delete-btn {
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .delete-btn:hover {
+        background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="button-container">
+    <a href="Admin1.html" class="custom-button">Add User</a>
+    <a href="addcandidate.html" class="custom-button">Add Candidate</a>
+    <button class="custom-button" onclick="showDeleteSection()">Delete Candidate</button>
+  </div>
+
+  <div id="deleteSection">
+    <h2>Delete Candidate from Voting Table</h2>
+    <table id="votingTable">
+      <thead>
+        <tr>
+          <th>Sr.No</th>
+          <th>Candidate Name</th>
+          <th>Logo</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be injected here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function showDeleteSection() {
+      document.getElementById("deleteSection").style.display = "block";
+      loadCandidates();
+    }
+
+    function loadCandidates() {
+      let candidates = JSON.parse(localStorage.getItem("candidates")) || [];
+      let tbody = document.querySelector("#votingTable tbody");
+      tbody.innerHTML = ""; // Clear previous rows
+
+      candidates.forEach((candidate, index) => {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${candidate.name}</td>
+          <td><img src="${candidate.logo}" width="50" height="50"></td>
+          <td><button class="delete-btn" onclick="deleteCandidate(${index})">Delete</button></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function deleteCandidate(index) {
+      let candidates = JSON.parse(localStorage.getItem("candidates")) || [];
+      candidates.splice(index, 1); // Remove the selected candidate
+      localStorage.setItem("candidates", JSON.stringify(candidates));
+      loadCandidates(); // Refresh the table
+    }
+  </script>
+
+</body>
+</html>

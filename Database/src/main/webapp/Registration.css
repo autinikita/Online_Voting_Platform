@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(34, 144, 222);
+  }
+  
+  h2{
+      color: white;
+      text-align: center;
+      margin-top: 80px;
+  }
+  form{
+      padding: 30px;
+      text-align: center;
+  }
+  
+  button{
+    border: none;
+    background-color: purple;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 30px;
+  }
+  
+  div{
+    align: center;
+    border: 1px solid white;
+    height: 500px;
+    width: 500px;
+    background-color: white;
+    align-items: center;
+    margin-right: 200px;
+  }

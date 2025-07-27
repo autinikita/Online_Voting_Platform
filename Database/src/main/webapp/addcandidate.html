@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add Candidates</title>
+    <link rel="stylesheet" href="addcandidate.css">
+</head>
+<body>
+
+    <h2>Add Candidate</h2>
+    <form id="candidateForm">
+        <input type="text" id="candidateName" placeholder="Candidate Name" required>
+        <input type="file" id="candidateLogo" accept="image/*" required>
+        <button type="submit">Add Candidate</button>
+    </form>
+
+    <script>
+        document.getElementById("candidateForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("candidateName").value;
+            let logoInput = document.getElementById("candidateLogo");
+            let file = logoInput.files[0];
+
+            if (!file) {
+                alert("Please upload a logo.");
+                return;
+            }
+
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                let candidates = JSON.parse(localStorage.getItem("candidates")) || [];
+                candidates.push({ name: name, logo: e.target.result });
+                localStorage.setItem("candidates", JSON.stringify(candidates));
+
+                alert("Candidate Added Successfully!");
+                document.getElementById("candidateForm").reset();
+            };
+
+            reader.readAsDataURL(file);
+        });
+    </script>
+
+</body>
+</html>

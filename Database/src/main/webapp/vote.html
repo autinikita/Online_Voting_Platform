@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Table</title>
+    <link rel="stylesheet" href="vote.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const voteButtons = document.querySelectorAll(".vote-button");
+
+            voteButtons.forEach((button) => {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent form submission for demo purposes
+
+                    // Disable all buttons
+                    voteButtons.forEach((btn) => {
+                        btn.disabled = true;
+                        btn.textContent = "Disabled"; // Change text for unclicked buttons
+                    });
+
+                    // Update clicked button
+                    this.textContent = "Voted";
+                    this.style.backgroundColor = "green"; // Optional: change the button color
+                    this.style.color = "white";
+
+                    // Uncomment this line if you want to proceed with form submission:
+                    this.closest("form").submit();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Candidate Name</th>
+                <th>Logo</th>
+                <th>Vote</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>BJP</td>
+                <td><img src="BJP.jpg" alt="BJP Logo" width="50"></td>
+                <td>
+                    <form action="Voteing" method="post">
+                        <input type="hidden" name="candidate" value="Candidate 1">
+                        <button type="submit" class="vote-button">Vote</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Congress</td>
+                <td><img src="CONGRESS.png" alt="Congress Logo" width="50"></td>
+                <td>
+                    <form action="Voteing" method="post">
+                        <input type="hidden" name="candidate" value="Candidate 2">
+                        <button type="submit" class="vote-button">Vote</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>ShivSena</td>
+                <td><img src="SHIVSENA.png" alt="Shiv Sena Logo" width="50"></td>
+                <td>
+                    <form action="Voteing" method="post">
+                        <input type="hidden" name="candidate" value="Candidate 3">
+                        <button type="submit" class="vote-button">Vote</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
